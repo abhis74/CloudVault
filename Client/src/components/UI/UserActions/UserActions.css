@@ -1,0 +1,40 @@
+.user-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.user-actions__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.user-actions__button:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.user-actions__button--profile {
+    background: #3b82f6;
+    border-radius: 50%;
+}
+
+.user-actions__button--profile:hover {
+    background: #2563eb;
+    transform: translateY(-1px) scale(1.05);
+}
+
+.user-actions__icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}

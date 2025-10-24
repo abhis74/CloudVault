@@ -1,0 +1,17 @@
+.welcome-section {
+    margin-bottom: 2rem;
+}
+
+.welcome-section__title {
+    font-size: 18px;
+    font-weight: 400;
+    color: #1e293b;
+    margin: 0;
+    letter-spacing: -0.025em;
+}
+
+@media (max-width: 768px) {
+    .welcome-section__title {
+        font-size: 16px;
+    }
+}

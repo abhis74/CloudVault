@@ -1,35 +1,38 @@
-import {createBrowserRouter, RouterProvider} from "react-router-dom";
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
 import DirectoryView from "./DirectoryView";
 import Login from "./login";
 import Register from "./Register";
 
-
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <DirectoryView />,
-    //  children: [{ path: "*", element: <Dashboard /> }]
+    element: (
+      <Layout>
+        <DirectoryView />
+      </Layout>
+    ),
   },
   {
     path: "/directory/:id",
-    element: <DirectoryView />,
-    //  children: [{ path: "*", element: <Dashboard /> }]
+    element: (
+      <Layout>
+        <DirectoryView />
+      </Layout>
+    ),
   },
   {
     path: "/login",
     element: <Login />,
-    //  children: [{ path: "*", element: <Dashboard /> }]
   },
   {
     path: "/register",
     element: <Register />,
-    //  children: [{ path: "*", element: <Dashboard /> }]
   }
 ]);
+
 function App() {
-  return (
-    <RouterProvider router={router} />
-  )
+  return <RouterProvider router={router} />;
 }
-export default App
+
+export default App;

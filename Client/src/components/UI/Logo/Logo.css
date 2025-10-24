@@ -1,0 +1,28 @@
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    border: 2px dashed rgba(59, 130, 246, 0.3);
+    border-radius: 12px;
+    background: rgba(59, 130, 246, 0.05);
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    border-color: rgba(59, 130, 246, 0.5);
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.logo__icon {
+    width: 32px;
+    height: 32px;
+    fill: #ffffff;
+}
+
+.logo__text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    letter-spacing: -0.025em;
+}

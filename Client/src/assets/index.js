@@ -1,0 +1,21 @@
+// Export all SVG icons for easy importing (Vite syntax)
+export { default as CloudVaultIcon } from './icons/cloud-vault.svg?react';
+export { default as SearchIcon } from './icons/search.svg?react';
+export { default as GridIcon } from './icons/grid.svg?react';
+export { default as SettingsIcon } from './icons/settings.svg?react';
+export { default as BellIcon } from './icons/bell.svg?react';
+export { default as UserIcon } from './icons/user.svg?react';
+export { default as PlusIcon } from './icons/plus.svg?react';
+export { default as HomeIcon } from './icons/home.svg?react';
+export { default as FolderIcon } from './icons/folder.svg?react';
+export { default as ShareIcon } from './icons/share.svg?react';
+export { default as StarIcon } from './icons/star.svg?react';
+export { default as ClockIcon } from './icons/clock.svg?react';
+export { default as TrashIcon } from './icons/trash.svg?react';
+export { default as ArrowRightIcon } from './icons/arrow-right.svg?react';
+export { default as FilterIcon } from './icons/filter.svg?react';
+export { default as GridViewIcon } from './icons/grid-view.svg?react';
+export { default as ListViewIcon } from './icons/list-view.svg?react';
+export { default as VideoIcon } from './icons/video.svg?react';
+export { default as DownloadIcon } from './icons/download.svg?react';
+export { default as MoreIcon } from './icons/more.svg?react';
