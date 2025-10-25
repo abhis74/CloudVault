@@ -1,0 +1,121 @@
+.file-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    width: 320px;
+    height: 260px;
+}
+
+.file-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    border-color: #3b82f6;
+}
+
+.file-card__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.file-card__title-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 0;
+}
+
+.file-card__small-icon {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+.file-card__small-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+}
+
+.file-card__title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.file-card__actions {
+    display: flex;
+    gap: 0.25rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.file-card:hover .file-card__actions {
+    opacity: 1;
+}
+
+.file-card__action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #64748b;
+}
+
+.file-card__action:hover {
+    background: #f1f5f9;
+    color: #3b82f6;
+}
+
+.file-card__action svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.file-card__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    min-height: 80px;
+}
+
+.file-card__main-icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.file-card__main-icon {
+    width: 48px;
+    height: 48px;
+    fill: currentColor;
+}
+
+.file-card__footer {
+    text-align: center;
+}
+
+.file-card__last-opened {
+    font-size: 0.8rem;
+    color: #64748b;
+    font-weight: 500;
+}
