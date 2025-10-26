@@ -3,6 +3,9 @@ import Layout from "./components/Layout/Layout";
 import DirectoryView from "./DirectoryView";
 import Login from "./login";
 import Register from "./Register";
+import { store } from "./store/store";
+import { Provider } from 'react-redux'
+
 
 const router = createBrowserRouter([
   {
@@ -32,7 +35,7 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
-  return <RouterProvider router={router} />;
+  return <Provider store={store}><RouterProvider router={router} /></Provider> ;
 }
 
 export default App;

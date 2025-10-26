@@ -6,6 +6,7 @@ import StarIcon from '../../../assets/icons/star.svg?react';
 import ClockIcon from '../../../assets/icons/clock.svg?react';
 import TrashIcon from '../../../assets/icons/trash.svg?react';
 import './NavigationItem.css';
+import { Link } from 'react-router-dom';
 
 const NavigationItem = ({ id, label, icon, active = false }) => {
     const getIcon = () => {
@@ -30,7 +31,7 @@ const NavigationItem = ({ id, label, icon, active = false }) => {
     };
 
     return (
-        <li className="navigation-item">
+        <Link  to={`${id}`}  className="navigation-item">
             <button
                 className={`navigation-item__button ${active ? 'navigation-item__button--active' : ''}`}
                 onClick={() => console.log(`Navigate to ${id}`)}
@@ -38,7 +39,7 @@ const NavigationItem = ({ id, label, icon, active = false }) => {
                 {getIcon()}
                 <span className="navigation-item__label">{label}</span>
             </button>
-        </li>
+        </Link>
     );
 };
 
