@@ -19,3 +19,5 @@ export { default as ListViewIcon } from './icons/list-view.svg?react';
 export { default as VideoIcon } from './icons/video.svg?react';
 export { default as DownloadIcon } from './icons/download.svg?react';
 export { default as MoreIcon } from './icons/more.svg?react';
+export { default as Image } from './icons/image.svg?react';
+export { default as Paper } from './icons/Paper.svg?react';

@@ -78,7 +78,6 @@ function DirectoryView() {
     fetchData()
   }
   async function handleDeleteDir(id){
-    console.log(id);
 
     const response = await fetch(`${BASE_URL}directory/${id}`,{
       method: "DELETE",

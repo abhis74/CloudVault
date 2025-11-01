@@ -74,7 +74,8 @@ export const createFileBYparentDirId = async (req, res) => {
         extension,
         name: filename,
         parentDirId: parentDirData._id,
-        userID:user._id
+        userID:user._id,
+        type:'file'
     })
     console.log(savedfile,"savedfile")
     const fullFileName = `${savedfile._id.toString()}${extension}`
@@ -104,7 +105,8 @@ export const createFile = async (req, res) => {
             extension,
             name: filename,
             parentDirId:parentDirData._id,
-            userID: user._id
+            userID: user._id,
+             type:'file'
     })
     const fullFileName = `${savedfile._id.toString()}${extension}`
     const writeStream = createWriteStream(`./storage/${fullFileName}`)

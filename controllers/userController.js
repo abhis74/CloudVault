@@ -4,7 +4,9 @@ import User from "../models/userModel.js";
 import crypto from "crypto";
 
 export const createUser = async (req, res, next) => {
+  console.log(req.body)
   const { name, email, password } = req.body;
+  
   const db = req.db;
   const hashedPassword = crypto
     .createHash("sha256")
@@ -55,8 +57,8 @@ export const createUser = async (req, res, next) => {
 };
 
 export const loginUser = async (req, res) => {
+  console.log(req.body)
   const { email, password } = req.body;
-
   const user = await User.findOne({ email });
   const enteredPasswordHash = crypto
     .createHash("sha256")

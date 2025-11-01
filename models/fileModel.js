@@ -7,6 +7,7 @@ const fileSchema = new Schema({
     extension : { type: String, required: true },
     userID : {type: Schema.Types.ObjectId, ref: 'User', required: true},
     parentDirId: { type: Schema.Types.ObjectId, ref: '`Directory`', required: true },
+    type:{type:String,ref: 'Directory', default: 'file' }
 
 },{
     strict:'throw',

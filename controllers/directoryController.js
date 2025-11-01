@@ -43,6 +43,7 @@ export const CreateDirectory = async (req, res) => {
       name: dirname,
       parentId,
       userID: user._id,
+      type:'folder'
     });
 
     return res.status(201).json({ message: "Directory Created" });
@@ -65,6 +66,7 @@ export const createDirectoyByParentDirId = async (req, res) => {
       name: dirname,
       parentId,
       userID: user._id,
+      type:'folder'
     });
     return res.status(201).json({ message: "Directory Created" });
   } catch (err) {

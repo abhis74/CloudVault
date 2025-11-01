@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Login.css'; // We'll create this CSS file next
+import { useLoginUserMutation } from './store/slices/UserSlice';
 
 const Login = ({ onLogin }) => {
+  const [loginUser,{isLoading}]= useLoginUserMutation()
   const [formData, setFormData] = useState({
     email: '',
     password: ''
@@ -61,7 +63,9 @@ const Login = ({ onLogin }) => {
         
         // Call the onLogin prop with the form data
         // onLogin(formData);
+        // loginUser(formData).unwrap()
             setTimeout(() => {
+
             nevigate("/")
         },2000)
       } catch (error) {

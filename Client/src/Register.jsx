@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Register.css'; // We'll create this CSS file next
 import { useNavigate } from 'react-router-dom';
+import { useAddUserMutation } from "./store/slices/UserSlice";
 
 const Register = ({ onRegister }) => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,7 @@ const Register = ({ onRegister }) => {
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [addUser, { isLoading }] = useAddUserMutation();
  const nevigate =  useNavigate()
 
   const handleChange = (e) => {
@@ -58,14 +60,15 @@ const Register = ({ onRegister }) => {
       try {
         // Here you would typically make an API call to your backend
         // For demonstration, we'll simulate an API call with setTimeout
-       const resopnse  = await fetch(`${BASE_URL}user`, {
-            method: "POST",
-            body : JSON.stringify(formData),
-            headers: {
-                "Content-Type": "application/json"
-            },
-        })
-        console.log(await resopnse.json())
+      //  const resopnse  = await fetch(`${BASE_URL}user`, {
+      //       method: "POST",
+      //       body : JSON.stringify(formData),
+      //       headers: {
+      //           "Content-Type": "application/json"
+      //       },
+      //   })
+        addUser(formData)
+        // console.log(await resopnse.json())
         // Call the onRegister prop with the form data
         // onRegister({
         //   name: formData.name,

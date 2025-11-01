@@ -1,18 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FileCard from '../FileCard/FileCard';
 import './FileGrid.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useEffect } from 'react';
-import { use } from 'react';
 import { useSelector } from 'react-redux';
-
+import {
+  useFetchDirectoryQuery,
+  useCreateDirectoryMutation,
+  useDeleteDirectoryMutation,
+  useRenameDirectoryMutation,
+} from '../../../store/slices/directories'
+import { useGetUsersQuery } from '../../../store/slices/UserSlice';
 const FileGrid = () => {
-    const directories = useSelector((state) => state.directories.directoriesList);
-    console.log(directories,"directories from store");
+      const [name, setName] = useState("")
+      const [email, setEmail] = useState("")
+      const [fileslist, setfileslist] = useState([])
+     const [directorieslist, setDirectorieslist] = useState([])
+
+    const {id} = useParams()
+    // const directories = useSelector((state) => state.directories.directoriesList);
+//     const { data, error, isLoading } = useFetchDirectoryQuery(id?id:''); // directoryId is the id you want to fetch
+// const [createDirectory] = useCreateDirectoryMutation();
+// const [deleteDirectory] = useDeleteDirectoryMutation();
+// const [renameDirectory] = useRenameDirectoryMutation();
+// const [Userresponse] = useGetUsersQuery()
     const BASE_URL = "http://localhost:3000/"
-    const {id}= useParams()
-    const nevigate = useNavigate()
+    
+const nevigate = useNavigate()
  async function  fetchData() {
+
  const response=  await fetch(`${BASE_URL}directory/${id? id : ""}`,{
   credentials: "include",
  })
@@ -26,6 +42,7 @@ const FileGrid = () => {
   return}
   setName(userData.name)
   setEmail(userData.email)
+  
   const data  = await response.json()
       if(response.status === 401){
         nevigate("/login")
@@ -36,7 +53,6 @@ const FileGrid = () => {
   }
   useEffect(() => {
    fetchData()
-   console.log(id);
   }, [id])
 
     // Mock data - replace with actual data from API
@@ -81,7 +97,10 @@ const FileGrid = () => {
 
     return (
         <div className="file-grid">
-            {files.map((file) => (
+            {directorieslist.map((directory,index) => (
+                <FileCard key={directory.id} file={directory}/>
+            ))}
+            {fileslist.map((file) => (
                 <FileCard key={file.id} file={file} />
             ))}
         </div>
