@@ -2,7 +2,7 @@
     width: 100%;
 }
 
-.navigation-item__button {
+.navigation-item_button {
     display: flex;
     align-items: center;
     gap: 0.75rem;
@@ -19,28 +19,28 @@
     text-align: left;
 }
 
-.navigation-item__button:hover {
+.navigation-item_button:hover {
     background: rgba(255, 255, 255, 0.1);
     color: #ffffff;
 }
 
-.navigation-item__button--active {
+.navigation-item_button--active {
     background: rgba(139, 92, 246, 0.2);
     color: #8b5cf6;
     border-bottom: 2px solid #8b5cf6;
 }
 
-.navigation-item__button--active:hover {
+.navigation-item_button--active:hover {
     background: rgba(139, 92, 246, 0.3);
 }
 
-.navigation-item__icon {
+.navigation-item_icon {
     width: 20px;
     height: 20px;
     fill: currentColor;
     flex-shrink: 0;
 }
 
-.navigation-item__label {
+.navigation-item_label {
     flex: 1;
 }

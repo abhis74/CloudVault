@@ -10,6 +10,8 @@
     overflow: hidden;
     width: 320px;
     height: 260px;
+    display: flex;
+    flex-direction: column;
 }
 
 .file-card:hover {
@@ -18,103 +20,88 @@
     border-color: #3b82f6;
 }
 
-.file-card__header {
+.file-card_top-actions {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-
-.file-card__title-section {
-    display: flex;
-    align-items: center;
+    justify-content: flex-end;
     gap: 0.5rem;
-    flex: 1;
-    min-width: 0;
-}
-
-.file-card__small-icon {
-    width: 16px;
-    height: 16px;
-    flex-shrink: 0;
-}
-
-.file-card__small-icon svg {
-    width: 100%;
-    height: 100%;
-    fill: currentColor;
-}
-
-.file-card__title {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: #1e293b;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.file-card__actions {
-    display: flex;
-    gap: 0.25rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 10;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.file-card:hover .file-card__actions {
+.file-card:hover .file-card_top-actions {
     opacity: 1;
 }
 
-.file-card__action {
+.file-card_action {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 28px;
     height: 28px;
     border: none;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.9);
     border-radius: 6px;
     cursor: pointer;
     transition: all 0.3s ease;
     color: #64748b;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
-.file-card__action:hover {
-    background: #f1f5f9;
+.file-card_action:hover {
+    background: #ffffff;
     color: #3b82f6;
 }
 
-.file-card__action svg {
-    width: 14px;
-    height: 14px;
+.file-card_action svg {
+    width: 16px;
+    height: 16px;
     fill: currentColor;
 }
 
-.file-card__content {
+.file-card_content {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex: 1;
     margin-bottom: 1rem;
-    min-height: 80px;
 }
 
-.file-card__main-icon-container {
+.file-card_main-icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.file-card__main-icon {
-    width: 48px;
-    height: 48px;
+.file-card_main-icon {
+    width: 64px;
+    height: 64px;
     fill: currentColor;
 }
 
-.file-card__footer {
+.file-card_footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
     text-align: center;
 }
 
-.file-card__last-opened {
+.file-card_title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #1e293b;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+}
+
+.file-card_last-opened {
     font-size: 0.8rem;
     color: #64748b;
     font-weight: 500;

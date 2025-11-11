@@ -5,8 +5,8 @@ import './Logo.css';
 const Logo = () => {
     return (
         <div className="logo">
-            <CloudVaultIcon className="logo__icon" />
-            <span className="logo__text">Cloud Vault</span>
+            <CloudVaultIcon className="logo_icon" />
+            <span className="logo_text">Cloud Vault</span>
         </div>
     );
 };

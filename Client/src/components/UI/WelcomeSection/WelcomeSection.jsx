@@ -4,7 +4,7 @@ import './WelcomeSection.css';
 const WelcomeSection = () => {
     return (
         <div className="welcome-section">
-            <h1 className="welcome-section__title">Welcome Chitrangda!</h1>
+            <h1 className="welcome-section_title">Welcome Chitrangda!</h1>
         </div>
     );
 };

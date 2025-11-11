@@ -4,17 +4,21 @@
     height: 100vh;
     background: #f8fafc;
     overflow: hidden;
+    background-image: url('../../assets/images/cloudvault_background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.layout__body {
+.layout_body {
     display: flex;
     flex: 1;
-    height: calc(100vh - 70px);
+    height: 100vh;
     overflow: hidden;
 }
 
 @media (max-width: 768px) {
-    .layout__body {
+    .layout_body {
         flex-direction: column;
     }
 }

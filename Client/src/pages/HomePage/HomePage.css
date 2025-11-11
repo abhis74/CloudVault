@@ -1,0 +1,18 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.home-page_header {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+}
+
+.home-page_content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}

@@ -7,13 +7,13 @@
     border-bottom: 1px solid #e2e8f0;
 }
 
-.file-toolbar__left {
+.file-toolbar_left {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.file-toolbar__filter {
+.file-toolbar_filter {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,17 +26,17 @@
     transition: all 0.3s ease;
 }
 
-.file-toolbar__filter:hover {
+.file-toolbar_filter:hover {
     border-color: #3b82f6;
     background: rgba(59, 130, 246, 0.05);
 }
 
-.file-toolbar__dropdowns {
+.file-toolbar_dropdowns {
     display: flex;
     gap: 0.75rem;
 }
 
-.file-toolbar__dropdown {
+.file-toolbar_dropdown {
     padding: 0.5rem 1rem;
     border: 1px solid #e2e8f0;
     border-radius: 6px;
@@ -48,29 +48,29 @@
     transition: all 0.3s ease;
 }
 
-.file-toolbar__dropdown:hover {
+.file-toolbar_dropdown:hover {
     border-color: #3b82f6;
 }
 
-.file-toolbar__dropdown:focus {
+.file-toolbar_dropdown:focus {
     outline: none;
     border-color: #3b82f6;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.file-toolbar__right {
+.file-toolbar_right {
     display: flex;
     align-items: center;
 }
 
-.file-toolbar__view-toggle {
+.file-toolbar_view-toggle {
     display: flex;
     border: 1px solid #e2e8f0;
     border-radius: 8px;
     overflow: hidden;
 }
 
-.file-toolbar__view-button {
+.file-toolbar_view-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -82,20 +82,20 @@
     transition: all 0.3s ease;
 }
 
-.file-toolbar__view-button:hover {
+.file-toolbar_view-button:hover {
     background: #f8fafc;
 }
 
-.file-toolbar__view-button--active {
+.file-toolbar_view-button--active {
     background: #3b82f6;
     color: #ffffff;
 }
 
-.file-toolbar__view-button--active:hover {
+.file-toolbar_view-button--active:hover {
     background: #2563eb;
 }
 
-.file-toolbar__icon {
+.file-toolbar_icon {
     width: 18px;
     height: 18px;
     fill: currentColor;
@@ -108,15 +108,15 @@
         align-items: stretch;
     }
 
-    .file-toolbar__left {
+    .file-toolbar_left {
         justify-content: space-between;
     }
 
-    .file-toolbar__dropdowns {
+    .file-toolbar_dropdowns {
         gap: 0.5rem;
     }
 
-    .file-toolbar__dropdown {
+    .file-toolbar_dropdown {
         padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
     }

@@ -4,7 +4,7 @@
     max-width: 400px;
 }
 
-.search-bar__input {
+.search-bar_input {
     width: 100%;
     padding: 0.75rem 1rem 0.75rem 3rem;
     border: none;
@@ -16,16 +16,16 @@
     outline: none;
 }
 
-.search-bar__input:focus {
+.search-bar_input:focus {
     background: #ffffff;
     box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
-.search-bar__input::placeholder {
+.search-bar_input::placeholder {
     color: #94a3b8;
 }
 
-.search-bar__icon {
+.search-bar_icon {
     position: absolute;
     left: 1rem;
     top: 50%;

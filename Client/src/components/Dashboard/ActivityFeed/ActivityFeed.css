@@ -1,0 +1,80 @@
+.activity-feed {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.activity-feed_title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0 0 1.5rem 0;
+}
+
+.activity-feed_items {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.activity-feed_item {
+    display: flex;
+    gap: 1rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.activity-feed_item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.activity-feed_icon {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.activity-feed_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.activity-feed_action {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+}
+
+.activity-feed_action-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.activity-feed_time {
+    font-size: 0.8rem;
+    color: #64748b;
+    white-space: nowrap;
+}
+
+.activity-feed_details {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.4;
+}
+
+.activity-feed_timestamp {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}

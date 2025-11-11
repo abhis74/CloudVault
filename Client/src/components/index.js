@@ -21,3 +21,12 @@ export { default as NavigationItem } from './Navigation/NavigationItem/Navigatio
 // File Management Components
 export { default as FileGrid } from './FileManagement/FileGrid/FileGrid';
 export { default as FileCard } from './FileManagement/FileCard/FileCard';
+export { default as FileList } from './FileManagement/FileList/FileList';
+
+// Dashboard Components
+export { default as Dashboard } from './Dashboard/Dashboard';
+export { default as OverviewCard } from './Dashboard/OverviewCard/OverviewCard';
+export { default as CategoryCard } from './Dashboard/CategoryCard/CategoryCard';
+export { default as SharedFilesList } from './Dashboard/SharedFilesList/SharedFilesList';
+export { default as StorageBreakdown } from './Dashboard/StorageBreakdown/StorageBreakdown';
+export { default as ActivityFeed } from './Dashboard/ActivityFeed/ActivityFeed';

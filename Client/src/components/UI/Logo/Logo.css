@@ -14,13 +14,13 @@
     background: rgba(59, 130, 246, 0.1);
 }
 
-.logo__icon {
+.logo_icon {
     width: 32px;
     height: 32px;
     fill: #ffffff;
 }
 
-.logo__text {
+.logo_text {
     font-size: 18px;
     font-weight: bold;
     color: #ffffff;

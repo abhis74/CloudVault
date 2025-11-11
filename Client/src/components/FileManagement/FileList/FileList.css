@@ -1,0 +1,193 @@
+.file-list {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    flex: 1;
+    height: 100%;
+}
+
+.file-list_table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+}
+
+.file-list_table thead {
+    background: #f8fafc;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.file-list_table th {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #64748b;
+    border-bottom: 1px solid #e2e8f0;
+    white-space: nowrap;
+}
+
+.file-list_table tbody tr {
+    border-bottom: 1px solid #f1f5f9;
+    transition: background-color 0.2s ease;
+}
+
+.file-list_table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.file-list_table td {
+    padding: 1rem;
+    font-size: 0.875rem;
+    color: #1e293b;
+    vertical-align: middle;
+}
+
+.file-list_checkbox-col {
+    width: 50px;
+}
+
+.file-list_checkbox-col input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #3b82f6;
+}
+
+.file-list_name-col {
+    min-width: 250px;
+}
+
+.file-list_name-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.file-list_icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.file-list_icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.file-list_name {
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.file-list_owner-col {
+    min-width: 150px;
+}
+
+.file-list_owner-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-list_owner-avatar {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #3b82f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    flex-shrink: 0;
+}
+
+.file-list_owner-avatar svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}
+
+.file-list_size-col {
+    min-width: 120px;
+    color: #64748b;
+}
+
+.file-list_date-col {
+    min-width: 180px;
+    color: #64748b;
+}
+
+.file-list_actions-col {
+    width: 180px;
+}
+
+.file-list_actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.file-list_action {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    color: #64748b;
+}
+
+.file-list_action:hover {
+    background: #f1f5f9;
+    color: #3b82f6;
+}
+
+.file-list_action svg {
+    width: 16px;
+    height: 16px;
+    fill: currentColor;
+}
+
+/* Custom scrollbar */
+.file-list::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.file-list::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 3px;
+}
+
+.file-list::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+}
+
+.file-list::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+@media (max-width: 768px) {
+    .file-list_table {
+        font-size: 0.8rem;
+    }
+
+    .file-list_table th,
+    .file-list_table td {
+        padding: 0.5rem;
+    }
+
+    .file-list_name-col {
+        min-width: 200px;
+    }
+}

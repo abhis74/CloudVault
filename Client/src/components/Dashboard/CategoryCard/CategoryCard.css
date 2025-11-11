@@ -1,0 +1,136 @@
+.category-card {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.category-card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category-card_title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.category-card_icon {
+    width: 28px;
+    height: 28px;
+    fill: currentColor;
+    opacity: 0.8;
+}
+
+.category-card_count {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1;
+}
+
+.category-card_progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.category-card_progress-bar {
+    width: 100%;
+    height: 6px;
+    background: #ffffff;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.category-card_progress-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.3s ease;
+}
+
+.category-card_progress-text {
+    font-size: 0.8rem;
+    color: #9B9B9B;
+}
+
+.category-card_button {
+    margin-top: auto;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.category-card_button:hover {
+    background: rgba(0, 0, 0, 0.03);
+    color: #1e293b;
+}
+
+/* Color themes */
+.category-card--pink {
+    background: #FFE0E8;
+}
+
+.category-card--pink .category-card_icon {
+    color: #FB7DA1;
+}
+
+.category-card--pink .category-card_progress-fill {
+    background: #FB7DA1;
+}
+
+.category-card--blue {
+    background: #E0E6FB;
+}
+
+.category-card--blue .category-card_icon {
+    color: #8AA4FF;
+}
+
+.category-card--blue .category-card_progress-fill {
+    background: #8AA4FF;
+}
+
+.category-card--orange {
+    background: #FFE1CD;
+}
+
+.category-card--orange .category-card_icon {
+    color: #F38A47;
+}
+
+.category-card--orange .category-card_progress-fill {
+    background: #F38A47;
+}
+
+.category-card--green {
+    background: #D0F0E5;
+}
+
+.category-card--green .category-card_icon {
+    color: #34D399;
+}
+
+.category-card--green .category-card_progress-fill {
+    background: #34D399;
+}
