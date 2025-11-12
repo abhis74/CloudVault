@@ -2,8 +2,20 @@ import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import './Modal.css';
 import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import {  useCreateDirectoryMutation, useFetchDirectoryQuery, useUploadFileMutation } from '../../../store/slices/directoriesSlice';
 
 const Modal = ({setIsOpen}) => {
+   const {id} = useParams()
+  const [createDirectory] = useCreateDirectoryMutation();
+  const [uploadFile] = useUploadFileMutation();
+  const { data, isLoading } = useFetchDirectoryQuery(id);
+  console.log(data)
+
+ 
+  // console.log(createDirectory,"createDirectory")
+  // const directories = useSelector((state)=>state.directoriesSlice.directoryData);
+  const dispatch = useDispatch();
   const [files, setFiles] = useState([]);
   const [folders, setFolders] = useState([]);
     const [directorieslist, setDirectorieslist] = useState([])
@@ -15,7 +27,6 @@ const Modal = ({setIsOpen}) => {
   const dropRef = useRef(null);
    const [progress , setProgress] = useState(0)
   const BASE_URL = "http://localhost:3000/"
-  const {id}= useParams()
     const nevigate = useNavigate()
    async function  fetchData() {
    const response=  await fetch(`${BASE_URL}directory/${id? id : ""}`,{
@@ -37,6 +48,7 @@ const Modal = ({setIsOpen}) => {
           return
         }
         setDirectorieslist(data.directories);
+        // dispatch(addDirectory(data.directories))
         setfileslist(data.files);
     }
     useEffect(() => {
@@ -53,72 +65,107 @@ const Modal = ({setIsOpen}) => {
     dropRef.current.classList.remove("highlight");
   };
 
-  const handleDrop = (e) => {
+  const handleDrop =  async(e) => {
     e.preventDefault();
     dropRef.current.classList.remove("highlight");
     const file = e.dataTransfer.files[0]
-    const xhr = new XMLHttpRequest()
-    xhr.open("POST", `${BASE_URL}files/${id || ""}`, true)
-    console.log(file.name)
-    xhr.setRequestHeader("filename", file.name)
-    xhr.addEventListener('load', (e) => {
-        e.preventDefault()
-        fetchData()
-        setIsOpen(false);
+    try {
+      const result = await uploadFile({
+        directoryId: id,
+        file,
+        filename: file.name,
+      }).unwrap();
+
+      console.log("✅ File uploaded:", result);
+      fetchData();
+      setIsOpen(false);
+    } catch (err) {
+      console.error("❌ Upload failed:", err);
+    }
+setIsOpen(false);
+    // const xhr = new XMLHttpRequest()
+    // xhr.open("POST", `${BASE_URL}files/${id || ""}`, true)
+    // console.log(file.name)
+    // xhr.setRequestHeader("filename", file.name)
+    // xhr.addEventListener('load', (e) => {
+    //     e.preventDefault()
+    //     fetchData()
+    //     setIsOpen(false);
         
-    })
-    xhr.withCredentials = true
-    xhr.upload.addEventListener('progress', (e) => {
-        e.preventDefault()
-        console.log((e.loaded / e.total * 100) + "% uploaded");
-        setProgress((e.loaded / e.total * 100) + "% uploaded");
-    })
-    xhr.send(file)
+    // })
+    // xhr.withCredentials = true
+    // xhr.upload.addEventListener('progress', (e) => {
+    //     e.preventDefault()
+    //     console.log((e.loaded / e.total * 100) + "% uploaded");
+    //     setProgress((e.loaded / e.total * 100) + "% uploaded");
+    // })
+    // xhr.send(file)
   
   };
 
   // --- Handle File Input ---
-  const handleFileChange = (e) => {
-      e.preventDefault()
+  const handleFileChange =  async (e) => {
+    // debugger
+    e.preventDefault()
     const file = e.target.files[0]
     console.log(file);
-    const xhr = new XMLHttpRequest()
+     try {
+      const result = await uploadFile({
+        directoryId: id,
+        file,
+        filename: file.name,
+      }).unwrap();
+
+      console.log("✅ File uploaded:", result);
+      fetchData();
+      setIsOpen(false);
+    } catch (err) {
+      console.error("❌ Upload failed:", err);
+    }
+    // // uploadFile({directoryId : id, file, filename: file.name})
+
+    
+    // const xhr = new XMLHttpRequest()
     // xhr.open("POST", BASE_URL, true)
-    // xhr.open("POST", `${BASE_URL}file${dirPath}/${file.name}`, true)
-    xhr.open("POST", `${BASE_URL}files/${id || ""}`, true)
-    xhr.setRequestHeader("filename", file.name)
-    xhr.addEventListener('load', (e) => {
-        e.preventDefault()
-        console.log("File uploaded successfully")
-        console.log(e);
-        console.log(xhr.responseText);
-        fetchData()
-        setIsOpen(false);
-    })
-    xhr.withCredentials = true
-    xhr.upload.addEventListener('progress', (e) => {
-        e.preventDefault()
-        console.log((e.loaded / e.total * 100) + "% uploaded");
-        setProgress((e.loaded / e.total * 100) + "% uploaded");
-    })
-    xhr.send(file)
+    // xhr.open("POST", `${BASE_URL}files/${id || ""}`, true)
+    // xhr.setRequestHeader("filename", file.name)
+    // xhr.addEventListener('load', (e) => {
+    //     e.preventDefault()
+    //     console.log("File uploaded successfully")
+    //     console.log(e);
+    //     console.log(xhr.responseText);
+    //     fetchData()
+    //      setIsOpen(false);
+        
+    // })
+    // xhr.withCredentials = true
+    // xhr.upload.addEventListener('progress', (e) => {
+    //     e.preventDefault()
+    //     console.log((e.loaded / e.total * 100) + "% uploaded");
+    //     setProgress((e.loaded / e.total * 100) + "% uploaded");
+    // })
+    // xhr.send(file)
+
+
+    useUploadFileMutation
   };
 
   // --- Handle Folder Popup ---
   const   handleCreateFolder = async (e) => {
     if (newFolderName.trim() !== "") {
-    e.preventDefault()
-    const response = await fetch(`${BASE_URL}directory/${id || ""}`,{
-      method: "POST",
-      headers:{
-        "Content-Type":"application/json",
-        dirname: newFolderName,
-      },
-      credentials: "include"
-      // body: JSON.stringify({directoryName}),
-    })
-    console.log(response,"response");
-    await response.json({message:"dicrectory created"})
+    // e.preventDefault()
+    // const response = await fetch(`${BASE_URL}directory/${id || ""}`,{
+    //   method: "POST",
+    //   headers:{
+    //     "Content-Type":"application/json",
+    //     dirname: newFolderName,
+    //   },
+    //   credentials: "include"
+    //   // body: JSON.stringify({directoryName}),
+    // })
+     await createDirectory({ parentId:id,dirName:newFolderName});
+    // console.log(response,"response");
+    // await response.json({message:"dicrectory created"})
     fetchData()
       setNewFolderName("");
       setIsOpen(false);

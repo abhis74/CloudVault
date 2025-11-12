@@ -12,11 +12,21 @@ import "./FileCard.css";
 import { Link } from "react-router-dom";
 import { extension } from "mime-types";
 import FilePreviewModal from "../../UI/PreviewModal/PreviewModal";
+// import { deleteDirectory } from '../../../store/slices/directoriesSlice';
+import { useDispatch } from "react-redux";
+import { useDeleteDirectoryMutation, useDeleteFileMutation, useFetchfileQuery } from "../../../store/slices/directoriesSlice";
+import SharePopup from "../../UI/SharePopup/SharePopup";
 
 const FileCard = ({ file }) => {
+
+  const dispatch = useDispatch();
+  
+
+  const [deleteDirectory] = useDeleteDirectoryMutation();
+  const [deleteFile] = useDeleteFileMutation();
   const BASE_URL = "http://localhost:3000/";
-  console.log(file, "file");
   const [previewFile, setPreviewFile] = useState(null);
+  const [popup,setPopup] = useState(false)
   const getFileIcon = () => {
     switch (file.extension) {
       case "folder":
@@ -24,6 +34,10 @@ const FileCard = ({ file }) => {
       case "video":
         return <VideoIcon className="file-card__main-icon" />;
       case ".png":
+        return <Image className="file-card__main-icon" />;
+      case ".svg":
+        return <Image className="file-card__main-icon" />;
+      case ".jpeg":
         return <Image className="file-card__main-icon" />;
 
       case ".pdf":
@@ -46,25 +60,21 @@ const FileCard = ({ file }) => {
   };
   const deleteFileAndFolder = async (id, ext) => {
     if (ext == undefined) {
-      const response = await fetch(`${BASE_URL}directory/${id}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
+     await deleteDirectory(id)
     } else {
-      const response = await fetch(`${BASE_URL}files/${id}`, {
-        method: "DELETE",
-        credentials: "include",
-      });
-      const data = await response.text();
+      await deleteFile(id)
     }
   };
-
-  const handlePreview = () => {
+ 
+  const handlePreview = async () => {
     if (file.extension != undefined) {
-
+      console.log(file._id)
         setPreviewFile(`${BASE_URL}files/${file._id}`); // can be image, pdf, doc, etc.
     }
   };
+  const  sharePopupHandler = ()=>{
+    setPopup(true)
+  }
   return (
     <div className="file-card">
       <div className="file-card__header">
@@ -86,9 +96,13 @@ const FileCard = ({ file }) => {
               </a>
             </button>
           )}
-          <button className="file-card__action" title="Share">
-            <ShareIcon />
+          <button className="file-card__action" title="Share"  >
+            <ShareIcon onClick={sharePopupHandler}/>
           </button>
+
+
+        { popup && <SharePopup link={`${BASE_URL}files/${file._id}`} closePopup={setPopup} />}
+
           <button className="file-card__action" title="Star">
             <StarIcon />
           </button>
@@ -119,9 +133,9 @@ const FileCard = ({ file }) => {
           </div>
         {/* </Link> */}
       </div>}
-      { !file.extension && <div className="file-card__content" onClick={handlePreview}>
+      { !file.extension && <div className="file-card__content" >
         <Link
-          to={file.extension ? `/files/${file._id}` : `/directory/${file._id}`}
+          to={`/directory/${file._id}`}
         >
           <div
             className="file-card__main-icon-container"
@@ -141,7 +155,7 @@ const FileCard = ({ file }) => {
 
        <div>
 
-      <FilePreviewModal fileUrl={previewFile} onClose={() => setPreviewFile(null)} />
+      <FilePreviewModal fileData={file}  fileUrl={previewFile} onClose={() => setPreviewFile(null)} />
     </div>
     </div>
   );
