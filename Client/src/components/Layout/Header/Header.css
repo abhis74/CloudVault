@@ -11,18 +11,18 @@
     z-index: 100;
 }
 
-.header__left {
+.header_left {
     display: flex;
     align-items: center;
 }
 
-.header__center {
+.header_center {
     flex: 1;
     max-width: 500px;
     margin: 0 2rem;
 }
 
-.header__right {
+.header_right {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -36,7 +36,7 @@
         gap: 1rem;
     }
 
-    .header__center {
+    .header_center {
         margin: 0;
         max-width: 100%;
     }

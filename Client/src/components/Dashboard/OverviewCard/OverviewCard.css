@@ -1,0 +1,128 @@
+.overview-card {
+    background: #ffffff;
+    border: 1px solid #d9d9d9;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.overview-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.overview-card_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.overview-card_title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.overview-card_icon {
+    width: 32px;
+    height: 32px;
+    fill: currentColor;
+    opacity: 0.8;
+}
+
+.overview-card_count {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1;
+}
+
+.overview-card_progress {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.overview-card_progress-bar {
+    width: 100%;
+    height: 8px;
+    background: #ffffff;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.overview-card_progress-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.overview-card_progress-text {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.875rem;
+    color: #9B9B9B;
+}
+
+.overview-card_button {
+    margin-top: auto;
+    padding: 0.75rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-align: left;
+}
+
+.overview-card_button:hover {
+    background: rgba(0, 0, 0, 0.03);
+    color: #1e293b;
+}
+
+/* Color themes */
+.overview-card--orange {
+    background: #FFE1CD;
+}
+
+.overview-card--orange .overview-card_icon {
+    color: #FF822E;
+}
+
+.overview-card--orange .overview-card_progress-fill {
+    background: #FF822E;
+}
+
+.overview-card--green {
+    background: #D0F0E5;
+}
+
+.overview-card--green .overview-card_icon {
+    color: #34D399;
+}
+
+.overview-card--green .overview-card_progress-fill {
+    background: #34D399;
+}
+
+.overview-card--pink {
+    background: #FFE0E8;
+}
+
+.overview-card--pink .overview-card_icon {
+    color: #FB7DA1;
+}
+
+.overview-card--pink .overview-card_progress-fill {
+    background: #FB7DA1;
+}

@@ -15,11 +15,11 @@ const FileFilters = () => {
 
     return (
         <div className="file-filters">
-            <div className="file-filters__list">
+            <div className="file-filters_list">
                 {filters.map((filter) => (
                     <button
                         key={filter.id}
-                        className={`file-filters__button ${activeFilter === filter.id ? 'file-filters__button--active' : ''
+                        className={`file-filters_button ${activeFilter === filter.id ? 'file-filters_button--active' : ''
                             }`}
                         onClick={() => setActiveFilter(filter.id)}
                     >

@@ -8,9 +8,9 @@ import TrashIcon from '../../../assets/icons/trash.svg?react';
 import './NavigationItem.css';
 import { Link } from 'react-router-dom';
 
-const NavigationItem = ({ id, label, icon, active = false }) => {
+const NavigationItem = ({ id, label, icon, path, active = false }) => {
     const getIcon = () => {
-        const iconProps = { className: 'navigation-item__icon' };
+        const iconProps = { className: 'navigation-item_icon' };
 
         switch (icon) {
             case 'home':
@@ -31,13 +31,12 @@ const NavigationItem = ({ id, label, icon, active = false }) => {
     };
 
     return (
-        <Link  to={`${id}`}  className="navigation-item">
+        <Link to={path} className="navigation-item">
             <button
-                className={`navigation-item__button ${active ? 'navigation-item__button--active' : ''}`}
-                onClick={() => console.log(`Navigate to ${id}`)}
+                className={`navigation-item_button ${active ? 'navigation-item_button--active' : ''}`}
             >
                 {getIcon()}
-                <span className="navigation-item__label">{label}</span>
+                <span className="navigation-item_label">{label}</span>
             </button>
         </Link>
     );

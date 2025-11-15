@@ -1,0 +1,27 @@
+.recents-page {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.recents-page_header {
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+}
+
+.recents-page_content {
+    flex: 1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
+
+.recents-page_loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #64748b;
+    font-size: 1rem;
+}

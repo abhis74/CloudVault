@@ -27,12 +27,12 @@
     box-shadow: 0 2px 8px rgba(139, 92, 246, 0.3);
 }
 
-.new-button__icon {
+.new-button_icon {
     width: 18px;
     height: 18px;
     fill: currentColor;
 }
 
-.new-button__text {
+.new-button_text {
     font-weight: 600;
 }

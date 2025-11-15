@@ -20,7 +20,7 @@ try {
     app.use(express.json())
     app.use(express.urlencoded({ extended: true }));
     app.use("/directory", checkAuth, direcortyRoutes)
-    app.use("/files", checkAuth, filesRoutes)
+    app.use("/files", filesRoutes)
     app.use("/user", userRoutes)
     app.listen(3000, () => {
         console.log("Server is running on prot on 3000")

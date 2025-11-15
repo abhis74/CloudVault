@@ -31,10 +31,12 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const user = createApi({
   reducerPath: 'user',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/',credentials: 'include' }),
   endpoints: (builder) => ({
     getUsers: builder.query({
       query: () => 'user',
+       method: 'GET',
+
     }),
     addUser: builder.mutation({
       query: (newUser) => ({

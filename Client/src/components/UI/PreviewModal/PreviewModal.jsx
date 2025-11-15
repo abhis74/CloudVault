@@ -1,6 +1,7 @@
 import { createPortal } from "react-dom";
 import "./PreviewModal.css"
  function  FilePreviewModal ({ fileUrl, onClose,fileData }) {
+  console.log(fileData,"filedata")
   if (!fileUrl) return null;
 
   return (
@@ -9,7 +10,7 @@ import "./PreviewModal.css"
       <div className="modal-content" onClick={e => e.stopPropagation()}>
 
         {fileUrl && (
-  fileData.extension.match(/(.jpg|.jpeg|png|gif|svg|webp)$/i) ? (
+  fileData?.extension.match(/(.jpg|.jpeg|png|gif|svg|webp)$/i) ? (
     <img
       src={fileUrl}
       alt="preview"

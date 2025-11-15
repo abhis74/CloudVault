@@ -1,4 +1,5 @@
 import React from 'react';
+import Logo from '../../UI/Logo/Logo';
 import Navigation from '../../Navigation/Navigation';
 import StorageIndicator from '../../UI/StorageIndicator/StorageIndicator';
 import NewButton from '../../UI/NewButton/NewButton';
@@ -7,24 +8,21 @@ import './Sidebar.css';
 const Sidebar = () => {
     return (
         <aside className="sidebar">
-            <div className="sidebar__content">
-                <div className="sidebar__top">
+            <div className="sidebar_content">
+                <div className="sidebar_logo">
+                    <Logo />
+                </div>
+                <div className="sidebar_top">
                     <NewButton />
                 </div>
 
-                <div className="sidebar__navigation">
+                <div className="sidebar_navigation">
                     <Navigation />
                 </div>
 
-                <div className="sidebar__bottom">
+                <div className="sidebar_bottom">
                     <StorageIndicator />
                 </div>
-            </div>
-
-            {/* Background decorative elements */}
-            <div className="sidebar__background">
-                <div className="sidebar__cloud-icon"></div>
-                <div className="sidebar__folder-icon"></div>
             </div>
         </aside>
     );

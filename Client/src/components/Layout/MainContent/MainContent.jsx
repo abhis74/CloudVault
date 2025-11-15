@@ -1,27 +1,23 @@
 import React from 'react';
-import WelcomeSection from '../../UI/WelcomeSection/WelcomeSection';
-import FileFilters from '../../UI/FileFilters/FileFilters';
-import FileToolbar from '../../UI/FileToolbar/FileToolbar';
-import FileGrid from '../../FileManagement/FileGrid/FileGrid';
+import SearchBar from '../../UI/SearchBar/SearchBar';
+import UserActions from '../../UI/UserActions/UserActions';
 import './MainContent.css';
 
-const MainContent = () => {
+const MainContent = ({ children }) => {
     return (
         <main className="main-content">
-            <div className="main-content__container">
-                <div className="main-content__header">
-                    <WelcomeSection />
-                    <FileFilters />
-                    <FileToolbar />
+            <div className="main-content_container">
+                <div className="main-content_top-bar">
+                    <div className="main-content_top-bar-left">
+                        <SearchBar />
+                    </div>
+                    <div className="main-content_top-bar-right">
+                        <UserActions />
+                    </div>
                 </div>
-                <div className="main-content__scrollable">
-                    <FileGrid />
+                <div className="main-content_scrollable">
+                    {children}
                 </div>
-            </div>
-
-            {/* Background decorative element */}
-            <div className="main-content__background">
-                <div className="main-content__cloud-icon"></div>
             </div>
         </main>
     );

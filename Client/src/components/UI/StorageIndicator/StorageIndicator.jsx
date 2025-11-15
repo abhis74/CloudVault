@@ -9,25 +9,25 @@ const StorageIndicator = () => {
 
     return (
         <div className="storage-indicator">
-            <div className="storage-indicator__header">
-                <h3 className="storage-indicator__title">Storage (90% Full)</h3>
+            <div className="storage-indicator_header">
+                <h3 className="storage-indicator_title">Storage (90% Full)</h3>
             </div>
 
-            <div className="storage-indicator__progress">
-                <div className="storage-indicator__bar">
+            <div className="storage-indicator_progress">
+                <div className="storage-indicator_bar">
                     <div
-                        className="storage-indicator__fill"
+                        className="storage-indicator_fill"
                         style={{ width: `${percentage}%` }}
                     ></div>
                 </div>
-                <div className="storage-indicator__text">
+                <div className="storage-indicator_text">
                     {usedSpace} GB of {totalSpace} GB used
                 </div>
             </div>
 
-            <button className="storage-indicator__button">
+            <button className="storage-indicator_button">
                 <span>Get more space</span>
-                <ArrowRightIcon className="storage-indicator__icon" />
+                <ArrowRightIcon className="storage-indicator_icon" />
             </button>
         </div>
     );

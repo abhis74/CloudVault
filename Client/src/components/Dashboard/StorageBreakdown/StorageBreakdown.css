@@ -1,0 +1,115 @@
+.storage-breakdown {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.storage-breakdown_chart {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.storage-breakdown_chart svg {
+    overflow: visible;
+}
+
+.storage-breakdown_center {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.storage-breakdown_total {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.2;
+}
+
+.storage-breakdown_capacity {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 0.25rem;
+}
+
+.storage-breakdown_list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.storage-breakdown_item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.storage-breakdown_item:last-child {
+    border-bottom: none;
+}
+
+.storage-breakdown_item-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.storage-breakdown_indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.storage-breakdown_indicator--pink {
+    background: #FB7DA1;
+}
+
+.storage-breakdown_indicator--blue {
+    background: #8AA4FF;
+}
+
+.storage-breakdown_indicator--green {
+    background: #34D399;
+}
+
+.storage-breakdown_indicator--orange {
+    background: #F38A47;
+}
+
+.storage-breakdown_item-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #1e293b;
+}
+
+.storage-breakdown_item-details {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.storage-breakdown_item-size {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.storage-breakdown_item-count {
+    color: #64748b;
+}

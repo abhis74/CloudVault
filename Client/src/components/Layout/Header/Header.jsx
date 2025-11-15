@@ -7,13 +7,13 @@ import './Header.css';
 const Header = () => {
     return (
         <header className="header">
-            <div className="header__left">
+            <div className="header_left">
                 <Logo />
             </div>
-            <div className="header__center">
+            <div className="header_center">
                 <SearchBar />
             </div>
-            <div className="header__right">
+            <div className="header_right">
                 <UserActions />
             </div>
         </header>

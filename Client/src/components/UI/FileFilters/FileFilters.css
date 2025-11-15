@@ -2,13 +2,13 @@
     margin-bottom: 1.5rem;
 }
 
-.file-filters__list {
+.file-filters_list {
     display: flex;
     gap: 0.5rem;
     flex-wrap: wrap;
 }
 
-.file-filters__button {
+.file-filters_button {
     padding: 0.5rem 1rem;
     border: none;
     background: transparent;
@@ -21,17 +21,17 @@
     position: relative;
 }
 
-.file-filters__button:hover {
+.file-filters_button:hover {
     color: #3b82f6;
     background: rgba(59, 130, 246, 0.05);
 }
 
-.file-filters__button--active {
+.file-filters_button--active {
     color: #3b82f6;
     background: rgba(59, 130, 246, 0.1);
 }
 
-.file-filters__button--active::after {
+.file-filters_button--active::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -43,11 +43,11 @@
 }
 
 @media (max-width: 768px) {
-    .file-filters__list {
+    .file-filters_list {
         gap: 0.25rem;
     }
 
-    .file-filters__button {
+    .file-filters_button {
         padding: 0.4rem 0.8rem;
         font-size: 0.85rem;
     }

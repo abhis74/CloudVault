@@ -7,7 +7,9 @@ import Directory from "../models/directoryModel.js"
 export const getFiles = async (req, res) => {
     const { id } = req.params
     const user = req.user
-    const filedata = await File.findOne({_id: id,userID:user._id}).lean()
+    // const filedata = await File.findOne({_id: id,userID:user._id}).lean()
+    const filedata = await File.findOne({_id: id}).lean()
+
     if (!filedata) {
         return res.status(404).json({ message: "File not found" })
     }

@@ -2,7 +2,7 @@
     margin-bottom: 2rem;
 }
 
-.welcome-section__title {
+.welcome-section_title {
     font-size: 18px;
     font-weight: 400;
     color: #1e293b;
@@ -11,7 +11,7 @@
 }
 
 @media (max-width: 768px) {
-    .welcome-section__title {
+    .welcome-section_title {
         font-size: 16px;
     }
 }

@@ -11,13 +11,13 @@ const SearchBar = () => {
 
     return (
         <div className="search-bar">
-            <SearchIcon className="search-bar__icon" />
+            <SearchIcon className="search-bar_icon" />
             <input
                 type="text"
-                placeholder="Search"
+                placeholder="Search in CloudVault"
                 value={searchTerm}
                 onChange={handleSearch}
-                className="search-bar__input"
+                className="search-bar_input"
             />
         </div>
     );

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FolderIcon from "../../../assets/icons/folder.svg?react";
 import Image from "../../../assets/icons/image.svg?react";
 import Paper from "../../../assets/icons/Paper.svg?react";
-import Trash from "../../../assets/icons/trashcan.svg?react";
+import Trash from "../../../assets/icons/trash.svg?react";
 import VideoIcon from "../../../assets/icons/video.svg?react";
 import DownloadIcon from "../../../assets/icons/download.svg?react";
 import ShareIcon from "../../../assets/icons/share.svg?react";
@@ -30,9 +30,9 @@ const FileCard = ({ file }) => {
   const getFileIcon = () => {
     switch (file.extension) {
       case "folder":
-        return <FolderIcon className="file-card__main-icon" />;
+        return <FolderIcon className="file-card_main-icon" />;
       case "video":
-        return <VideoIcon className="file-card__main-icon" />;
+        return <VideoIcon className="file-card_main-icon" />;
       case ".png":
         return <Image className="file-card__main-icon" />;
       case ".svg":
@@ -44,7 +44,7 @@ const FileCard = ({ file }) => {
         return <Paper className="file-card__main-icon" />;
 
       default:
-        return <FolderIcon className="file-card__main-icon" />;
+        return <FolderIcon className="file-card_main-icon" />;
     }
   };
 
@@ -77,20 +77,20 @@ const FileCard = ({ file }) => {
   }
   return (
     <div className="file-card">
-      <div className="file-card__header">
-        <div className="file-card__title-section">
+      <div className="file-card_header">
+        <div className="file-card_title-section">
           <div
-            className="file-card__small-icon"
+            className="file-card_small-icon"
             style={{ color: getFileIconColor() }}
           >
             {file?.type === "folder" ? <FolderIcon /> : <VideoIcon />}
           </div>
-          <span className="file-card__title">{file?.name}</span>
+          <span className="file-card_title">{file?.name}</span>
         </div>
 
-        <div className="file-card__actions">
+        <div className="file-card_actions">
           {file.extension && (
-            <button className="file-card__action" title="Download">
+            <button className="file-card_action" title="Download">
               <a href={`${BASE_URL}files/${file._id}?action=download`}>
                 <DownloadIcon />
               </a>
@@ -106,7 +106,7 @@ const FileCard = ({ file }) => {
           <button className="file-card__action" title="Star">
             <StarIcon />
           </button>
-          {/* <button className="file-card__action" title="More options">
+          {/* <button className="file-card_action" title="More options">
                         <MoreIcon />
                     </button> */}
           <button
@@ -121,21 +121,21 @@ const FileCard = ({ file }) => {
         </div>
       </div>
 
-     {  file.extension &&<div className="file-card__content" onClick={handlePreview}>
+      {file.extension && <div className="file-card_content" onClick={handlePreview}>
         {/* <Link
           to={file.extension ? `/files/${file._id}` : `/directory/${file._id}`}
         > */}
-          <div
-            className="file-card__main-icon-container"
-            style={{ color: getFileIconColor() }}
-          >
-            {getFileIcon()}
-          </div>
+        <div
+          className="file-card_main-icon-container"
+          style={{ color: getFileIconColor() }}
+        >
+          {getFileIcon()}
+        </div>
         {/* </Link> */}
       </div>}
-      { !file.extension && <div className="file-card__content" >
+      {!file.extension && <div className="file-card__content" onClick={handlePreview}>
         <Link
-          to={`/directory/${file._id}`}
+          to={`/vault/${file._id}`}
         >
           <div
             className="file-card__main-icon-container"
@@ -146,17 +146,17 @@ const FileCard = ({ file }) => {
         </Link>
       </div>}
 
-      <div className="file-card__footer">
-        <span className="file-card__last-opened">
+      <div className="file-card_footer">
+        <span className="file-card_last-opened">
           You opened {file?.lastOpened}
         </span>
       </div>
 
 
-       <div>
+      <div>
 
-      <FilePreviewModal fileData={file}  fileUrl={previewFile} onClose={() => setPreviewFile(null)} />
-    </div>
+        <FilePreviewModal fileUrl={previewFile} onClose={() => setPreviewFile(null)} fileData={file} />
+      </div>
     </div>
   );
 };
